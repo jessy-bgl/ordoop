@@ -15,7 +15,7 @@
   "author": {
     "name": "Jessy"
   },
-  "license": "MIT",
+  "license": "GPL-3.0",
   "config": {
     "forge": {
       "packagerConfig": {},
