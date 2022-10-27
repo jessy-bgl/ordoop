@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { Box, List, Drawer, SvgIcon, Grid, Typography } from "@mui/material";
 
 import DashboardIcon from "@mui/icons-material/Dashboard";
+import HeadingsIcon from "@mui/icons-material/Topic";
 
 import ListItemWithIcon from "./components/ListItemTextIcon";
 // import { ReactComponent as Logo } from "../../assets/logo.svg";
@@ -52,6 +53,12 @@ export default function NavigationDrawer(props: Props) {
           muiIcon={<DashboardIcon />}
           onClick={() => handleClickItem("/")}
           selected={selectedItem === "/" || selectedItem === "/main_window"}
+        />
+        <ListItemWithIcon
+          name="Modèles d'en-tête"
+          muiIcon={<HeadingsIcon />}
+          onClick={() => handleClickItem("/headings")}
+          selected={selectedItem === "/headings"}
         />
       </List>
     </div>
