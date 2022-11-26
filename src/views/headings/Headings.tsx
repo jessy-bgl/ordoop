@@ -8,6 +8,7 @@ import { HeadingEditor } from "./components/HeadingEditor";
 
 const Headings = () => {
   const { headings, selectedHeading, handleSelectHeadingLabel } = useHeadings();
+
   const headingLabels = headings.map((heading) => heading.label);
 
   return (
@@ -20,7 +21,7 @@ const Headings = () => {
           <Grid item>
             <HeadingSelector
               headingLabels={headingLabels}
-              selectedHeadingLabel={selectedHeading?.label}
+              selectedHeadingLabel={selectedHeading.label}
               handleSelectHeadingLabel={handleSelectHeadingLabel}
             />
           </Grid>

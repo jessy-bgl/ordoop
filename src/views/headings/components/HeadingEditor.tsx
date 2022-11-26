@@ -4,7 +4,7 @@ import { Button, Grid, TextField } from "@mui/material";
 import { Heading } from "../../../models/heading";
 
 type Props = {
-  heading: Heading | undefined;
+  heading: Heading;
 };
 
 const HeadingEditor = ({ heading }: Props) => {
@@ -13,14 +13,14 @@ const HeadingEditor = ({ heading }: Props) => {
       <Grid item>
         <TextField
           label="Nom du modèle"
-          defaultValue={heading?.label}
+          defaultValue={heading.label}
           sx={{ width: 300 }}
         />
       </Grid>
       <Grid item>
         <TextField
           label="Nom du praticien"
-          defaultValue={heading?.name}
+          defaultValue={heading.name}
           sx={{ width: 300 }}
         />
       </Grid>
@@ -29,14 +29,14 @@ const HeadingEditor = ({ heading }: Props) => {
           multiline
           rows={7}
           label="Autres informations"
-          defaultValue={heading?.content}
+          defaultValue={heading.content}
           sx={{ width: 300 }}
         />
       </Grid>
       <Grid item>
         <TextField
           label="Lieu"
-          defaultValue={heading?.place}
+          defaultValue={heading.place}
           sx={{ width: 300 }}
         />
       </Grid>

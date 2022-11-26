@@ -11,7 +11,7 @@ import {
 import { Heading } from "../../../models/heading";
 
 type Props = {
-  heading: Heading | undefined;
+  heading: Heading;
 };
 
 const styles = StyleSheet.create({
@@ -33,14 +33,14 @@ const HeadingPreview = ({ heading }: Props) => {
     <Document>
       <Page size="A4" style={styles.page}>
         <View style={styles.practitionerName}>
-          <Text>{heading?.name}</Text>
+          <Text>{heading.name}</Text>
         </View>
         <View style={styles.practitionerInfo}>
-          <Text>{heading?.content}</Text>
+          <Text>{heading.content}</Text>
         </View>
         <View style={styles.place}>
           <Text>
-            {heading?.place ? `Le 22/10/2022, à ${heading.place}` : null}
+            {heading.place ? `Le 22/10/2022, à ${heading.place}` : null}
           </Text>
         </View>
       </Page>
