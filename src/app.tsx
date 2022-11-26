@@ -3,10 +3,12 @@ import * as ReactDOM from "react-dom";
 import { HashRouter } from "react-router-dom";
 import { CssBaseline, ThemeOptions } from "@mui/material";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
+import { QueryClientProvider } from "react-query";
 
 import { ThemeProvider as AppThemeProvider } from "./services/theme/ThemeProvider";
 import { useThemeContext } from "./services/theme/useThemeContext";
 import Routes from "./navigation/Routes";
+import { queryClient } from "./config/react-query";
 
 const darkTheme = {
   palette: {
@@ -28,10 +30,12 @@ const App = () => {
   const muiTheme = createTheme(appTheme.isDarkMode ? darkTheme : lightTheme);
 
   return (
-    <ThemeProvider theme={muiTheme}>
-      <CssBaseline />
-      <Routes />
-    </ThemeProvider>
+    <QueryClientProvider client={queryClient}>
+      <ThemeProvider theme={muiTheme}>
+        <CssBaseline />
+        <Routes />
+      </ThemeProvider>
+    </QueryClientProvider>
   );
 };
 
