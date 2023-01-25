@@ -35,7 +35,6 @@ const NavigationToolbar = (props: Props) => {
         <Toolbar>
           <IconButton
             color="inherit"
-            aria-label="open drawer"
             edge="start"
             onClick={props.handleDrawerToggle}
             sx={{ mr: 2, display: { lg: "none" } }}

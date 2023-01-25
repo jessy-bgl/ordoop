@@ -1,10 +1,21 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-import { Box, List, Drawer, SvgIcon, Grid, Typography } from "@mui/material";
+import {
+  Box,
+  List,
+  Drawer,
+  SvgIcon,
+  Grid,
+  Typography,
+  Divider,
+} from "@mui/material";
 
 import DashboardIcon from "@mui/icons-material/Dashboard";
-import HeadingsIcon from "@mui/icons-material/Topic";
+import ModelsIcon from "@mui/icons-material/Topic";
+import InvoicesIcon from "@mui/icons-material/RequestQuote";
+import PrescriptionsIcon from "@mui/icons-material/Medication";
+import SettingsIcon from "@mui/icons-material/Settings";
 
 import ListItemWithIcon from "./components/ListItemTextIcon";
 // import { ReactComponent as Logo } from "../../assets/logo.svg";
@@ -55,10 +66,38 @@ export default function NavigationDrawer(props: Props) {
           selected={selectedItem === "/" || selectedItem === "/main_window"}
         />
         <ListItemWithIcon
-          name="Modèles d'en-tête"
-          muiIcon={<HeadingsIcon />}
-          onClick={() => handleClickItem("/headings")}
-          selected={selectedItem === "/headings"}
+          disabled
+          name="Ordonnances"
+          muiIcon={<PrescriptionsIcon />}
+          onClick={() => handleClickItem("/")}
+          // selected={selectedItem === "/"}
+        />
+        <ListItemWithIcon
+          disabled
+          name="Factures"
+          muiIcon={<InvoicesIcon />}
+          onClick={() => handleClickItem("/")}
+          // selected={selectedItem === "/"}
+        />
+        <Divider />
+        <ListItemWithIcon
+          disabled
+          name="Prescriptions"
+          muiIcon={<PrescriptionsIcon />}
+          onClick={() => handleClickItem("/")}
+        />
+        <ListItemWithIcon
+          name="Modèles"
+          muiIcon={<ModelsIcon />}
+          onClick={() => handleClickItem("/models")}
+          selected={selectedItem === "/models"}
+        />
+        <ListItemWithIcon
+          disabled
+          name="Paramètres"
+          muiIcon={<SettingsIcon />}
+          onClick={() => handleClickItem("/")}
+          // selected={selectedItem === "/"}
         />
       </List>
     </div>

@@ -2,7 +2,7 @@ import React from "react";
 import { Navigate, Route, Routes } from "react-router-dom";
 
 import { Navigation } from "../views/navigation/Navigation";
-import { Headings } from "../views/headings/Headings";
+import { Models } from "../views/models/Models";
 
 function Router() {
   return (
@@ -14,8 +14,8 @@ function Router() {
         }
       />
       <Route
-        path="/headings"
-        element={<Navigation child={<Headings />} title="Modèles d'en-tête" />}
+        path="/models"
+        element={<Navigation child={<Models />} title="Modèles" />}
       />
       <Route path="*" element={<Navigate to="/" />} />
     </Routes>
